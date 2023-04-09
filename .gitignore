@@ -1,2 +1,16 @@
-*.txt
+.DS_Store
+*scss
 *.scss
+*.log
+node_modules
+build
+*.node
+components
+coverage
+*.orig
+.idea
+sandbox
+.sass-cache
+test/out-fixtures/*
+test/watch-*.txt
+gulp.1
