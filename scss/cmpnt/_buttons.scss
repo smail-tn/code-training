@@ -1,0 +1,67 @@
+@use "vars" as *;
+
+/* ============= BUTTONS ============ */
+$bootstrap-colors: (
+  "primary": #007bff,
+  "secondary": #6c757d,
+  "success": #28a745,
+  "danger": #dc3545,
+  "warning": #ffc107,
+  "info": #17a2b8,
+  // "light": #f8f9fa,
+  "dark": #343a40,
+);
+.btn {
+  transition: all 0.15s ease-in;
+  background-color: transparent;
+  border: 1px solid transparent;
+  text-transform: capitalize;
+  vertical-align: middle;
+  display: inline-block;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.2rem;
+  text-align: center;
+  white-space: nowrap;
+  position: relative;
+  user-select: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+@mixin tailwind-btn-styles($colors) {
+  @each $color-name, $color-value in $colors {
+    .btn-#{$color-name} {
+      background-color: $color-value;
+      color: #fff;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+    }
+    .btn-#{$color-name}:hover {
+      background-color: darken($color-value, 10%);
+    }
+    .btn-#{$color-name}:focus {
+      color: white;
+      box-shadow: 0 0 0 1px #fff, 0 0 0 2px $color-value;
+    }
+    .btn-outline-#{$color-name} {
+      border: 1px solid $color-value;
+      color: $color-value;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+    }
+    .btn-outline-#{$color-name}:hover {
+      background-color: lighten($color-value, 10%);
+      color: #fff;
+    }
+    .btn-outline-#{$color-name}:focus {
+      color: white;
+      border-color: $color-value;
+      background-color: lighten($color-value, 10%);
+      box-shadow: 0 0 0 1px #fff, 0 0 0 2px $color-value;
+    }
+  }
+}
+
+@include tailwind-btn-styles($bootstrap-colors);

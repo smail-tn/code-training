@@ -1,0 +1,63 @@
+@use "vars" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+html {
+  block-size: 100%;
+  inline-size: 100%;
+  font-size: var(--rem-size);
+  outline: none;
+  scroll-behavior: smooth;
+  position: relative;
+  box-sizing: border-box;
+  list-style: none;
+  outline: none;
+}
+
+body {
+  background-color: var(--body-bg-clr);
+  font-family: var(--body-font);
+  transition: all 0.1s linear;
+  color: var(--text-clr);
+  overflow-x: hidden;
+  font-weight: normal;
+  list-style: inherit;
+  position: relative;
+  line-height: 1.5;
+}
+
+img,
+span,
+label,
+button,
+input,
+a {
+  display: inline-block;
+}
+a{ 
+  text-decoration: none;
+}
+
+button , input { 
+  border: none;
+}
+
+img,
+audio,
+video {
+  user-select: none;
+  display: block;
+  height: auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  list-style: inherit;
+}

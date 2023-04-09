@@ -1,0 +1,41 @@
+@mixin prefix($map, $vendors: webkit moz) {
+  @each $prop, $value in $map {
+    @if $vendors {
+      @each $vendor in $vendors {
+        #{"-" + $vendor + "-" + $prop}: #{$value};
+      }
+    }
+    // Dump regular property anyway
+    #{$prop}: #{$value};
+  }
+}
+
+@mixin transform($value) {
+  @include prefix(
+    (
+      transform: $value,
+    )
+  );
+}
+
+@mixin column-count($value) {
+  @include prefix(
+    (
+      column-count: $value,
+    )
+  );
+}
+@mixin box-sizing($value: border-box) {
+  @include prefix(
+    (
+      box-sizing: $value,
+    )
+  );
+}
+@mixin border-radius($value) {
+  @include prefix(
+    (
+      border-radius: $value,
+    )
+  );
+}

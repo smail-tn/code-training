@@ -1,0 +1,11 @@
+@use "./cmpnt/vars" as *;
+//  importing cmpnt
+@use "./cmpnt/initial";
+@use "./cmpnt/container";
+@use "./cmpnt/typography";
+@use "./cmpnt/buttons";
+@use "./cmpnt/glassy";
+@use "./cmpnt/reused";
+
+//  importing sections
+@use "./layout/main";
